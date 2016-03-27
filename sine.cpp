@@ -1,7 +1,18 @@
+/**
+ * @sine.cpp
+ * @author Brandon Dellucky <bdellu1@lsu.edu>
+ * @brief  Calculates the sine and cosine of angles
+ */
+
  #include <iostream>
  #include <cmath>
  #include <iomanip>
-    
+ 
+ /**
+  * Computes factorial
+  * @param n number to compute
+  * @return n factorial
+  */
  double factorial(double n){
    double fact = 1;
    for (int i = 1; i <= n; i++)
@@ -11,6 +22,11 @@
    return fact;
  }
    
+ /**
+  * Computes the sine using Taylor series
+  * @param x angle
+  * @return sine approximation
+  */
  double sine(double x){
    double pi = 3.141592, rad = (x*(pi/180)), sum = 0, iter;
    int n = 1, sign = 1;
@@ -24,6 +40,11 @@
    return sum;
  }
    
+ /**
+  * Computes the cosine using Taylor series
+  * @param x angle
+  * @return cosine approximation
+  */
  double cosine(double x){
    double pi = 3.141592, rad = (x*(pi/180)), sum = 0, iter;
    int n = 0, sign = -1;
