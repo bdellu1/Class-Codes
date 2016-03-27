@@ -1,13 +1,27 @@
+/**
+ * @file-reverse.cpp
+ * @author Brandon Dellucky <bdellu1@lsu.edu>
+ * @brief  This program takes in a text file and outputs the reverse to a new file
+ */
+
  #include <iostream>
  #include <fstream>
  #include <stdlib.h>
    
+ /**
+  * Checks if input file exists
+  * @param filename
+  */
  void print(std::string filename) {
    std::ifstream input(filename.c_str());
    if (!input.is_open())
      throw "File could not be opened!";
  }
-   
+ 
+ /**
+  * Displays error and shows usage
+  * @param *progname  program name
+  */
  void usage(char *progname){
     std::cerr << "usage: " << progname << " file" << std::endl;
     std::cerr << "File could not be opened!" << std::endl;
