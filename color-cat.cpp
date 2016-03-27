@@ -1,16 +1,30 @@
+/**
+ * @color-cat.cpp
+ * @author Brandon Dellucky <bdellu1@lsu.edu>
+ * @brief  Takes in a file with a color scheme and outputs the file with colors
+ */
+
  #include <iostream>
  #include <fstream>
  #include <string>
  #include <iomanip>
  #include <stdlib.h>
  #include "color.h"
-   
+ 
+ /**
+  * Checks if file exists
+  * @param filename
+  */
  void print(std::string filename) {
    std::ifstream input(filename.c_str());
     if (!input.is_open())
       throw "File could not be opened!";
  }
    
+ /**
+  * Shows usage error
+  * @param *progname program name
+  */
  void usage(char *progname){
     std::cerr << "usage: " << progname << " file" << std::endl;
     std::cerr << "File could not be opened!" << std::endl;
