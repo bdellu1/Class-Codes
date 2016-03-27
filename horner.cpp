@@ -1,8 +1,21 @@
+/**
+ * @horner.cpp
+ * @author Brandon Dellucky <bdellu1@lsu.edu>
+ * @brief Evaluates a given polynomial via the Horner Method
+ */
+
  #include <iostream>
  #include <iomanip>
  #include <stdlib.h>
  #include <cmath>
-   
+ 
+ /**
+  * Implements the Horner Method
+  * @param p[]  array of coefficients
+  * @param n    size of array
+  * @param x    given x to evaluate polynomial
+  * @return     solution
+  */
  int polynomial(int p[], int n, int x){
    int result = p[n-1];
    for (int i=n-2; i>=0; i--)
@@ -10,10 +23,19 @@
    return result;
  }
   
+ /**
+  * Displays usage error.
+  * @param *progname  program name
+  */
  void usage(char *progname){
    std::cerr << "usage: " << progname << " x coefficients..." << std::endl;
  }
-  
+ 
+ /**
+  * Checks if user submitted number is an integer.
+  * @param *a  number
+  * @return  true if integer, false if not
+  */
  bool is_integer(char *a) {
    int i=0;
    if (a[0] == '-') i++;
